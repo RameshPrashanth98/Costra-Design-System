@@ -91,28 +91,28 @@ npm install -D typescript vite tailwindcss @storybook/react-vite storybook style
 ### Recommended Project Structure
 ```text
 tokens/
-+-- foundation/
-¦   +-- color.tokens.json        # Public raw foundations, traced to HTML vars
-¦   +-- typography.tokens.json   # Font families, weights, role styles
-¦   +-- spacing.tokens.json      # 4px scale
-¦   +-- elevation.tokens.json    # Shadow tokens
-¦   +-- radius.tokens.json       # Radius scale
-¦   +-- grid.tokens.json         # Columns, gutters, margins, breakpoints
-¦   +-- iconography.tokens.json  # Icon sizes, stroke rules, icon inventory
-+-- semantic/
-¦   +-- color.tokens.json        # Minimal aliases like text.primary
-¦   +-- surface.tokens.json      # Minimal aliases like surface.canvas
-+-- manifest/
-¦   +-- source-map.json          # Optional extraction audit for traceability
-+-- style-dictionary.config.ts   # Multi-target build config
+  foundation/
+    color.tokens.json        # Public raw foundations, traced to HTML vars
+    typography.tokens.json   # Font families, weights, role styles
+    spacing.tokens.json      # 4px scale
+    elevation.tokens.json    # Shadow tokens
+    radius.tokens.json       # Radius scale
+    grid.tokens.json         # Columns, gutters, margins, breakpoints
+    iconography.tokens.json  # Icon sizes, stroke rules, icon inventory
+  semantic/
+    color.tokens.json        # Minimal aliases like text.primary
+    surface.tokens.json      # Minimal aliases like surface.canvas
+  manifest/
+    source-map.json          # Optional extraction audit for traceability
+  style-dictionary.config.ts # Multi-target build config
 
 src/
-+-- tokens/
-    +-- generated/
-    ¦   +-- theme.css            # Tailwind v4 @theme output
-    ¦   +-- tokens.ts            # Typed JS/TS export
-    ¦   +-- tokens.json          # Storybook/docs data
-    +-- index.ts                 # Stable import surface
+  tokens/
+    generated/
+      theme.css              # Tailwind v4 @theme output
+      tokens.ts              # Typed JS/TS export
+      tokens.json            # Storybook/docs data
+    index.ts                 # Stable import surface
 ```
 
 ### Pattern 1: Foundation Source + Semantic Aliases
@@ -375,5 +375,6 @@ Link: https://styledictionary.com/info/tokens/
 
 **Research date:** 2026-03-27
 **Valid until:** 2026-04-26
+
 
 
