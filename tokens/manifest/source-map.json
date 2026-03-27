@@ -1,0 +1,789 @@
+{
+  "generatedAt": "2026-03-27T14:41:43.365Z",
+  "entries": [
+    {
+      "publicPath": "color.base.black",
+      "sourceCssVar": "--c-black",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.base.white",
+      "sourceCssVar": "--c-white",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.surface.canvas",
+      "sourceCssVar": "--c-surface",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.surface.panel",
+      "sourceCssVar": "--c-surface-2",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.surface.panelElevated",
+      "sourceCssVar": "--c-surface-3",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.border.default",
+      "sourceCssVar": "--c-border",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.border.subtle",
+      "sourceCssVar": "--c-border-subtle",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.text.primary",
+      "sourceCssVar": "--c-text",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.text.secondary",
+      "sourceCssVar": "--c-text-secondary",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.text.muted",
+      "sourceCssVar": "--c-muted",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.accent.primary",
+      "sourceCssVar": "--c-accent",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.accent.dim",
+      "sourceCssVar": "--c-accent-dim",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.accent.glow",
+      "sourceCssVar": "--c-accent-glow",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.accent.glowSoft",
+      "sourceCssVar": "--c-accent-glow-2",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.status.success",
+      "sourceCssVar": "--c-success",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.status.warning",
+      "sourceCssVar": "--c-warning",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.status.error",
+      "sourceCssVar": "--c-error",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "color.status.info",
+      "sourceCssVar": "--c-info",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.family.display",
+      "sourceCssVar": "--font-display",
+      "sourceSelector": null,
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.family.body",
+      "sourceCssVar": "--font-body",
+      "sourceSelector": null,
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.family.mono",
+      "sourceCssVar": "--font-mono",
+      "sourceSelector": null,
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.display-1",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-d1",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.display-2",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-d2",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.heading-1",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-h1",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.heading-2",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-h2",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.heading-3",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-h3",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.body",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-body",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.caption",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-caption",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "typography.role.code",
+      "sourceCssVar": null,
+      "sourceSelector": ".type-sample-code",
+      "sourceSection": "Typography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.0",
+      "sourceCssVar": "--space-0",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.1",
+      "sourceCssVar": "--space-1",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.2",
+      "sourceCssVar": "--space-2",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.3",
+      "sourceCssVar": "--space-3",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.4",
+      "sourceCssVar": "--space-4",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.5",
+      "sourceCssVar": "--space-5",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.6",
+      "sourceCssVar": "--space-6",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.8",
+      "sourceCssVar": "--space-8",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.10",
+      "sourceCssVar": "--space-10",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.12",
+      "sourceCssVar": "--space-12",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.16",
+      "sourceCssVar": "--space-16",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.20",
+      "sourceCssVar": "--space-20",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "spacing.24",
+      "sourceCssVar": "--space-24",
+      "sourceSelector": null,
+      "sourceSection": "Spacing Scale",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.xs",
+      "sourceCssVar": "--shadow-xs",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.sm",
+      "sourceCssVar": "--shadow-sm",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.md",
+      "sourceCssVar": "--shadow-md",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.lg",
+      "sourceCssVar": "--shadow-lg",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.xl",
+      "sourceCssVar": "--shadow-xl",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "elevation.glow",
+      "sourceCssVar": "--shadow-glow",
+      "sourceSelector": null,
+      "sourceSection": "Elevation",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.0",
+      "sourceCssVar": "--radius-0",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.xs",
+      "sourceCssVar": "--radius-xs",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.sm",
+      "sourceCssVar": "--radius-sm",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.md",
+      "sourceCssVar": "--radius-md",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.lg",
+      "sourceCssVar": "--radius-lg",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.xl",
+      "sourceCssVar": "--radius-xl",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "radius.full",
+      "sourceCssVar": "--radius-full",
+      "sourceSelector": null,
+      "sourceSection": "Border Radius",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.columns",
+      "sourceCssVar": "--grid-columns",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.gutter",
+      "sourceCssVar": "--grid-gutter",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.margin",
+      "sourceCssVar": "--grid-margin",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.max",
+      "sourceCssVar": "--grid-max",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.breakpoint.sm",
+      "sourceCssVar": "--bp-sm",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.breakpoint.md",
+      "sourceCssVar": "--bp-md",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.breakpoint.lg",
+      "sourceCssVar": "--bp-lg",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.breakpoint.xl",
+      "sourceCssVar": "--bp-xl",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "grid.breakpoint.2xl",
+      "sourceCssVar": "--bp-2xl",
+      "sourceSelector": null,
+      "sourceSection": "Grid",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.canvas",
+      "sourceCssVar": null,
+      "sourceSelector": ".icon-spec-card .is-value",
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.strokeWidth",
+      "sourceCssVar": "stroke-width",
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.strokeLinecap",
+      "sourceCssVar": "stroke-linecap",
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.strokeLinejoin",
+      "sourceCssVar": "stroke-linejoin",
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.size.sm",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.size.md",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.size.base",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.size.lg",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.shield",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.lock",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.search",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.alert",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.scan",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.verify",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.reject",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.identity",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.monitor",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.realtime",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.verified",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "iconography.inventory.activity",
+      "sourceCssVar": null,
+      "sourceSelector": null,
+      "sourceSection": "Iconography",
+      "layer": "foundation",
+      "sourcePath": null
+    },
+    {
+      "publicPath": "text.primary",
+      "sourceCssVar": "--c-text",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.text.primary"
+    },
+    {
+      "publicPath": "text.secondary",
+      "sourceCssVar": "--c-text-secondary",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.text.secondary"
+    },
+    {
+      "publicPath": "text.muted",
+      "sourceCssVar": "--c-muted",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.text.muted"
+    },
+    {
+      "publicPath": "interactive.primary",
+      "sourceCssVar": "--c-accent",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.accent.primary"
+    },
+    {
+      "publicPath": "interactive.primaryHover",
+      "sourceCssVar": "--c-accent-dim",
+      "sourceSelector": null,
+      "sourceSection": "Accent",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.accent.dim"
+    },
+    {
+      "publicPath": "status.success",
+      "sourceCssVar": "--c-success",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.status.success"
+    },
+    {
+      "publicPath": "status.warning",
+      "sourceCssVar": "--c-warning",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.status.warning"
+    },
+    {
+      "publicPath": "status.error",
+      "sourceCssVar": "--c-error",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.status.error"
+    },
+    {
+      "publicPath": "status.info",
+      "sourceCssVar": "--c-info",
+      "sourceSelector": null,
+      "sourceSection": "Semantic",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.status.info"
+    },
+    {
+      "publicPath": "surface.canvas",
+      "sourceCssVar": "--c-surface",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.surface.canvas"
+    },
+    {
+      "publicPath": "surface.panel",
+      "sourceCssVar": "--c-surface-2",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.surface.panel"
+    },
+    {
+      "publicPath": "surface.panelElevated",
+      "sourceCssVar": "--c-surface-3",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.surface.panelElevated"
+    },
+    {
+      "publicPath": "border.default",
+      "sourceCssVar": "--c-border",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.border.default"
+    },
+    {
+      "publicPath": "border.subtle",
+      "sourceCssVar": "--c-border-subtle",
+      "sourceSelector": null,
+      "sourceSection": "Core Palette",
+      "layer": "semantic",
+      "sourcePath": "foundation.color.border.subtle"
+    }
+  ]
+}
