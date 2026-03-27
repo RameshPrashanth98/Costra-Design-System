@@ -1,0 +1,246 @@
+{
+  "source": {
+    "html": "8.costra-design-system.html",
+    "version": "phase-01-audit"
+  },
+  "categories": {
+    "color": {
+      "sourceSection": "Core Palette, Accent, Semantic",
+      "references": [
+        {
+          "token": "--c-black",
+          "kind": "css-variable",
+          "lineHint": 12
+        },
+        {
+          "token": "--c-surface",
+          "kind": "css-variable",
+          "lineHint": 13
+        },
+        {
+          "token": "--c-surface-2",
+          "kind": "css-variable",
+          "lineHint": 14
+        },
+        {
+          "token": "--c-surface-3",
+          "kind": "css-variable",
+          "lineHint": 15
+        },
+        {
+          "token": "--c-border",
+          "kind": "css-variable",
+          "lineHint": 16
+        },
+        {
+          "token": "--c-border-subtle",
+          "kind": "css-variable",
+          "lineHint": 17
+        },
+        {
+          "token": "--c-muted",
+          "kind": "css-variable",
+          "lineHint": 18
+        },
+        {
+          "token": "--c-text-secondary",
+          "kind": "css-variable",
+          "lineHint": 19
+        },
+        {
+          "token": "--c-text",
+          "kind": "css-variable",
+          "lineHint": 20
+        },
+        {
+          "token": "--c-white",
+          "kind": "css-variable",
+          "lineHint": 21
+        },
+        {
+          "token": "--c-accent",
+          "kind": "css-variable",
+          "lineHint": 23
+        },
+        {
+          "token": "--c-accent-dim",
+          "kind": "css-variable",
+          "lineHint": 24
+        },
+        {
+          "token": "--c-accent-glow",
+          "kind": "css-variable",
+          "lineHint": 25
+        },
+        {
+          "token": "--c-accent-glow-2",
+          "kind": "css-variable",
+          "lineHint": 26
+        },
+        {
+          "token": "--c-success",
+          "kind": "css-variable",
+          "lineHint": 29
+        },
+        {
+          "token": "--c-warning",
+          "kind": "css-variable",
+          "lineHint": 30
+        },
+        {
+          "token": "--c-error",
+          "kind": "css-variable",
+          "lineHint": 31
+        },
+        {
+          "token": "--c-info",
+          "kind": "css-variable",
+          "lineHint": 32
+        }
+      ]
+    },
+    "typography": {
+      "sourceSection": "Typography",
+      "references": [
+        {
+          "token": "--font-display",
+          "kind": "css-variable",
+          "lineHint": 35
+        },
+        {
+          "token": "--font-mono",
+          "kind": "css-variable",
+          "lineHint": 36
+        },
+        {
+          "token": "--font-body",
+          "kind": "css-variable",
+          "lineHint": 37
+        },
+        {
+          "token": ".type-sample-d1",
+          "kind": "selector",
+          "lineHint": 459
+        },
+        {
+          "token": ".type-sample-d2",
+          "kind": "selector",
+          "lineHint": 467
+        },
+        {
+          "token": ".type-sample-h1",
+          "kind": "selector",
+          "lineHint": 475
+        },
+        {
+          "token": ".type-sample-h2",
+          "kind": "selector",
+          "lineHint": 482
+        },
+        {
+          "token": ".type-sample-h3",
+          "kind": "selector",
+          "lineHint": 488
+        },
+        {
+          "token": ".type-sample-body",
+          "kind": "selector",
+          "lineHint": 494
+        },
+        {
+          "token": ".type-sample-caption",
+          "kind": "selector",
+          "lineHint": 501
+        },
+        {
+          "token": ".type-sample-code",
+          "kind": "selector",
+          "lineHint": 509
+        }
+      ]
+    },
+    "spacing": {
+      "sourceSection": "Spacing Scale",
+      "references": [
+        "--space-0",
+        "--space-1",
+        "--space-2",
+        "--space-3",
+        "--space-4",
+        "--space-5",
+        "--space-6",
+        "--space-8",
+        "--space-10",
+        "--space-12",
+        "--space-16",
+        "--space-20",
+        "--space-24"
+      ]
+    },
+    "elevation": {
+      "sourceSection": "Elevation",
+      "references": [
+        "--shadow-xs",
+        "--shadow-sm",
+        "--shadow-md",
+        "--shadow-lg",
+        "--shadow-xl",
+        "--shadow-glow"
+      ]
+    },
+    "radius": {
+      "sourceSection": "Border Radius",
+      "references": [
+        "--radius-0",
+        "--radius-xs",
+        "--radius-sm",
+        "--radius-md",
+        "--radius-lg",
+        "--radius-xl",
+        "--radius-full"
+      ]
+    },
+    "grid": {
+      "sourceSection": "Grid",
+      "references": [
+        "--grid-columns",
+        "--grid-gutter",
+        "--grid-margin",
+        "--grid-max",
+        "--bp-sm",
+        "--bp-md",
+        "--bp-lg",
+        "--bp-xl",
+        "--bp-2xl",
+        "40rem",
+        "48rem",
+        "64rem",
+        "80rem",
+        "96rem"
+      ]
+    },
+    "iconography": {
+      "sourceSection": "Iconography",
+      "references": [
+        ".icon-grid",
+        ".icon-cell svg",
+        "24px",
+        "stroke-width",
+        "stroke-linecap",
+        "stroke-linejoin",
+        "Shield",
+        "Lock",
+        "Search",
+        "Alert",
+        "Scan",
+        "Verify",
+        "Reject",
+        "Identity",
+        "Monitor",
+        "Realtime",
+        "Verified",
+        "Activity"
+      ]
+    }
+  }
+}
