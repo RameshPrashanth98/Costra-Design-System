@@ -5,9 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx)'],
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-controls',
-    '@storybook/addon-a11y',
+    '@storybook/addon-essentials',    '@storybook/addon-a11y',
     '@storybook/addon-interactions'
   ],
   framework: {
@@ -19,10 +17,14 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
-      plugins: [tailwindcss()]
+      plugins: [tailwindcss()],
+      build: {
+        chunkSizeWarningLimit: 750
+      }
     });
   }
 };
 
 export default config;
+
 

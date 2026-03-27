@@ -152,7 +152,7 @@ function addVariable(lines, name, value) {
 }
 
 function emitThemeVariables() {
-  const lines = ['@theme {'];
+  const lines = [':root {'];
   const foundation = generatedPayload.foundation;
   const semantic = generatedPayload.semantic;
 
@@ -269,4 +269,6 @@ export default {
     }
   }
 };
+
+
 
