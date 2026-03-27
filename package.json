@@ -1,0 +1,16 @@
+{
+  "name": "costra-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "tokens:build": "style-dictionary build --config tokens/style-dictionary.config.ts",
+    "test": "vitest run",
+    "test:tokens": "vitest run tests/tokens"
+  },
+  "devDependencies": {
+    "style-dictionary": "5.4.0",
+    "typescript": "6.0.2",
+    "vitest": "4.1.2"
+  }
+}
