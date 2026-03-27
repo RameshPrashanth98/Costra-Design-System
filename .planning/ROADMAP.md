@@ -33,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
-- [ ] 01-02-PLAN.md - Implement foundation tokens and minimal semantic aliases
+- [x] 01-02-PLAN.md - Implement foundation tokens and minimal semantic aliases
 - [ ] 01-03-PLAN.md - Generate shared CSS, JSON, and TypeScript token outputs
 - [ ] 01-04-PLAN.md - Verify traceability and lock the stable token consumption surface
 
