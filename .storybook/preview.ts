@@ -22,6 +22,14 @@ const preview: Preview = {
         { name: 'white', value: '#ffffff' }
       ]
     },
+    options: {
+      storySort: {
+        order: [
+          'Foundations',
+          ['Overview', 'Design Tokens', 'Styles', ['Color', 'Typography', 'Spacing', 'Elevation', 'Grid', 'Iconography', 'Border and Radius']]
+        ]
+      }
+    },
     layout: 'fullscreen'
   }
 };
