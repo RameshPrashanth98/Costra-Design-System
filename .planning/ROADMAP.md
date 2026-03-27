@@ -32,9 +32,9 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Audit the HTML source and define the token extraction map
-- [ ] 01-02: Implement token definitions and exports for shared consumption
-- [ ] 01-03: Verify token naming, structure, and source traceability
+- [ ] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
+- [ ] 01-02-PLAN.md - Implement foundation tokens, semantic aliases, and generated exports
+- [ ] 01-03-PLAN.md - Verify traceability and lock the stable token consumption surface
 
 ### Phase 2: Storybook Foundation
 **Goal**: Establish Storybook and Tailwind as the canonical environment for exploring Costra foundations and consuming tokens
@@ -110,3 +110,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 3. Structural Components | 0/2 | Not started | - |
 | 4. Showcase Components | 0/3 | Not started | - |
 | 5. Accessibility and Team Handoff | 0/2 | Not started | - |
+
