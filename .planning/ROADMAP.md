@@ -29,12 +29,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Shared token definitions exist for color, typography, spacing, elevation, radius, grid, and iconography foundations taken from the HTML source
   2. The token model clearly maps back to the source HTML without duplicating or inventing unrelated visual foundations
   3. Future components can consume the token layer from one source instead of maintaining separate style constants
-**Plans**: 3 plans
+**Plans**: 4 plans
 
 Plans:
 - [ ] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
-- [ ] 01-02-PLAN.md - Implement foundation tokens, semantic aliases, and generated exports
-- [ ] 01-03-PLAN.md - Verify traceability and lock the stable token consumption surface
+- [ ] 01-02-PLAN.md - Implement foundation tokens and minimal semantic aliases
+- [ ] 01-03-PLAN.md - Generate shared CSS, JSON, and TypeScript token outputs
+- [ ] 01-04-PLAN.md - Verify traceability and lock the stable token consumption surface
 
 ### Phase 2: Storybook Foundation
 **Goal**: Establish Storybook and Tailwind as the canonical environment for exploring Costra foundations and consuming tokens
@@ -105,9 +106,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Token Foundation | 0/3 | Not started | - |
+| 1. Token Foundation | 0/4 | Not started | - |
 | 2. Storybook Foundation | 0/3 | Not started | - |
 | 3. Structural Components | 0/2 | Not started | - |
 | 4. Showcase Components | 0/3 | Not started | - |
 | 5. Accessibility and Team Handoff | 0/2 | Not started | - |
-
