@@ -12,7 +12,7 @@ This roadmap turns the existing Costra HTML foundation into a Storybook-first in
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Token Foundation** - Extract and normalize the shared Costra token system from the source HTML
+- [x] **Phase 1: Token Foundation** - Extract and normalize the shared Costra token system from the source HTML
 - [ ] **Phase 2: Storybook Foundation** - Wire Tailwind, Storybook, and token consumption around the shared theme
 - [ ] **Phase 3: Structural Components** - Build the first reusable structural components from the HTML patterns
 - [ ] **Phase 4: Showcase Components** - Build the first reusable showcase and token-display components with story coverage
@@ -34,8 +34,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 Plans:
 - [x] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
 - [x] 01-02-PLAN.md - Implement foundation tokens and minimal semantic aliases
-- [ ] 01-03-PLAN.md - Generate shared CSS, JSON, and TypeScript token outputs
-- [ ] 01-04-PLAN.md - Verify traceability and lock the stable token consumption surface
+- [x] 01-03-PLAN.md - Generate shared CSS, JSON, and TypeScript token outputs
+- [x] 01-04-PLAN.md - Verify traceability and lock the stable token consumption surface
 
 ### Phase 2: Storybook Foundation
 **Goal**: Establish Storybook and Tailwind as the canonical environment for exploring Costra foundations and consuming tokens
@@ -106,8 +106,9 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Token Foundation | 1/4 | In Progress | - |
+| 1. Token Foundation | 4/4 | Complete | 2026-03-27 |
 | 2. Storybook Foundation | 0/3 | Not started | - |
 | 3. Structural Components | 0/2 | Not started | - |
 | 4. Showcase Components | 0/3 | Not started | - |
 | 5. Accessibility and Team Handoff | 0/2 | Not started | - |
+

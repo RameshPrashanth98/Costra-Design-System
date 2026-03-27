@@ -7,10 +7,10 @@
 
 ### Tokens
 
-- [ ] **TOKN-01**: Design tokens for color foundations are extracted from the source HTML and exposed as shared system values
-- [ ] **TOKN-02**: Design tokens for typography roles, weights, and type scale are extracted from the source HTML and exposed as shared system values
-- [ ] **TOKN-03**: Design tokens for spacing, elevation, border radius, and grid foundations are extracted from the source HTML and exposed to Tailwind, components, and Storybook
-- [ ] **TOKN-04**: Iconography foundations from the source HTML are documented as canonical sizes, stroke rules, and supported initial icons
+- [x] **TOKN-01**: Design tokens for color foundations are extracted from the source HTML and exposed as shared system values
+- [x] **TOKN-02**: Design tokens for typography roles, weights, and type scale are extracted from the source HTML and exposed as shared system values
+- [x] **TOKN-03**: Design tokens for spacing, elevation, border radius, and grid foundations are extracted from the source HTML and exposed to Tailwind, components, and Storybook
+- [x] **TOKN-04**: Iconography foundations from the source HTML are documented as canonical sizes, stroke rules, and supported initial icons
 
 ### Documentation
 
@@ -49,10 +49,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| TOKN-01 | Phase 1 | Pending |
-| TOKN-02 | Phase 1 | Pending |
-| TOKN-03 | Phase 1 | Pending |
-| TOKN-04 | Phase 1 | Pending |
+| TOKN-01 | Phase 1 | Complete (2026-03-27) |
+| TOKN-02 | Phase 1 | Complete (2026-03-27) |
+| TOKN-03 | Phase 1 | Complete (2026-03-27) |
+| TOKN-04 | Phase 1 | Complete (2026-03-27) |
 | DOCS-01 | Phase 2 | Pending |
 | COMP-03 | Phase 2 | Pending |
 | COMP-01 | Phase 3 | Pending |
@@ -69,4 +69,5 @@
 
 ---
 *Requirements defined: 2026-03-27*
-*Last updated: 2026-03-27 after initial definition*
+*Last updated: 2026-03-27 after Phase 1 completion*
+
