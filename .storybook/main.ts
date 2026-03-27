@@ -3,7 +3,7 @@ import { mergeConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
+  stories: ['../src/**/*.stories.@(ts|tsx)'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-controls',
@@ -25,3 +25,4 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
