@@ -1,28 +1,29 @@
 import { describe, expect, test } from 'vitest';
 
-import extractionMap from '../../tokens/manifest/extraction-map.json';
+import typographyTokens from '../../tokens/foundation/typography.tokens.json';
 
 describe('typography tokens', () => {
-  test('tracks the source typography roles from the HTML selectors', () => {
-    const typography = extractionMap.categories.typography;
-    const selectorRefs = typography.references
-      .filter((entry): entry is { token: string; kind: string } => typeof entry === 'object')
-      .map((entry) => entry.token);
+  test('define font families and the required type roles', () => {
+    expect(typographyTokens.foundation.typography.family.display.$value).toEqual(['Outfit', 'sans-serif']);
+    expect(typographyTokens.foundation.typography.family.body.$value).toEqual(['Outfit', 'sans-serif']);
+    expect(typographyTokens.foundation.typography.family.mono.$value).toEqual(['JetBrains Mono', 'Space Mono', 'monospace']);
 
-    expect(selectorRefs).toEqual(
+    const roles = typographyTokens.foundation.typography.role;
+
+    expect(Object.keys(roles)).toEqual(
       expect.arrayContaining([
-        '.type-sample-d1',
-        '.type-sample-d2',
-        '.type-sample-h1',
-        '.type-sample-h2',
-        '.type-sample-h3',
-        '.type-sample-body',
-        '.type-sample-caption',
-        '.type-sample-code'
+        'display-1',
+        'display-2',
+        'heading-1',
+        'heading-2',
+        'heading-3',
+        'body',
+        'caption',
+        'code'
       ])
     );
+    expect(roles['display-1'].$extensions.costra.sourceSelector).toBe('.type-sample-d1');
+    expect(roles['heading-1'].$value.fontSize).toBe('2.25rem');
+    expect(roles.code.$value.lineHeight).toBe(1.5);
   });
-
-  test.todo('font families are exposed for display, body, and mono usage');
-  test.todo('role tokens include display-1, display-2, heading-1, heading-2, heading-3, body, caption, and code');
 });

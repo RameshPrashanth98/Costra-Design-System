@@ -1,0 +1,13 @@
+{
+  "foundation": {
+    "radius": {
+      "0": { "$type": "dimension", "$value": "0px", "$extensions": { "costra": { "sourceCssVar": "--radius-0", "sourceSection": "Border Radius" } } },
+      "xs": { "$type": "dimension", "$value": "2px", "$extensions": { "costra": { "sourceCssVar": "--radius-xs", "sourceSection": "Border Radius" } } },
+      "sm": { "$type": "dimension", "$value": "4px", "$extensions": { "costra": { "sourceCssVar": "--radius-sm", "sourceSection": "Border Radius" } } },
+      "md": { "$type": "dimension", "$value": "6px", "$extensions": { "costra": { "sourceCssVar": "--radius-md", "sourceSection": "Border Radius" } } },
+      "lg": { "$type": "dimension", "$value": "8px", "$extensions": { "costra": { "sourceCssVar": "--radius-lg", "sourceSection": "Border Radius" } } },
+      "xl": { "$type": "dimension", "$value": "12px", "$extensions": { "costra": { "sourceCssVar": "--radius-xl", "sourceSection": "Border Radius" } } },
+      "full": { "$type": "dimension", "$value": "9999px", "$extensions": { "costra": { "sourceCssVar": "--radius-full", "sourceSection": "Border Radius" } } }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "foundation": {
+    "typography": {
+      "family": {
+        "display": {
+          "$type": "fontFamily",
+          "$value": ["Outfit", "sans-serif"],
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--font-display",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "body": {
+          "$type": "fontFamily",
+          "$value": ["Outfit", "sans-serif"],
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--font-body",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "mono": {
+          "$type": "fontFamily",
+          "$value": ["JetBrains Mono", "Space Mono", "monospace"],
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--font-mono",
+              "sourceSection": "Typography"
+            }
+          }
+        }
+      },
+      "role": {
+        "display-1": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.display}",
+            "fontWeight": 900,
+            "fontSize": "4.5rem",
+            "lineHeight": 1,
+            "letterSpacing": "-0.03em",
+            "textTransform": "uppercase"
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-d1",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "display-2": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.display}",
+            "fontWeight": 800,
+            "fontSize": "3rem",
+            "lineHeight": 1.05,
+            "letterSpacing": "-0.02em",
+            "textTransform": "uppercase"
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-d2",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "heading-1": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.display}",
+            "fontWeight": 700,
+            "fontSize": "2.25rem",
+            "lineHeight": 1.15,
+            "letterSpacing": "-0.015em"
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-h1",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "heading-2": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.display}",
+            "fontWeight": 600,
+            "fontSize": "1.5rem",
+            "lineHeight": 1.3
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-h2",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "heading-3": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.display}",
+            "fontWeight": 600,
+            "fontSize": "1.125rem",
+            "lineHeight": 1.4
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-h3",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "body": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.body}",
+            "fontWeight": 400,
+            "fontSize": "1rem",
+            "lineHeight": 1.6
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-body",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "caption": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.mono}",
+            "fontWeight": 400,
+            "fontSize": "0.75rem",
+            "lineHeight": 1.5,
+            "letterSpacing": "0.05em",
+            "textTransform": "uppercase"
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-caption",
+              "sourceSection": "Typography"
+            }
+          }
+        },
+        "code": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{foundation.typography.family.mono}",
+            "fontWeight": 500,
+            "fontSize": "0.875rem",
+            "lineHeight": 1.5
+          },
+          "$extensions": {
+            "costra": {
+              "sourceSelector": ".type-sample-code",
+              "sourceSection": "Typography"
+            }
+          }
+        }
+      }
+    }
+  }
+}

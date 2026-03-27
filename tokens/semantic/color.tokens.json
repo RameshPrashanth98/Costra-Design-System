@@ -1,0 +1,102 @@
+{
+  "semantic": {
+    "color": {
+      "text": {
+        "primary": {
+          "$type": "color",
+          "$value": "{foundation.color.text.primary}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "text.primary",
+              "layer": "semantic"
+            }
+          }
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "{foundation.color.text.secondary}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "text.secondary",
+              "layer": "semantic"
+            }
+          }
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{foundation.color.text.muted}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "text.muted",
+              "layer": "semantic"
+            }
+          }
+        }
+      },
+      "interactive": {
+        "primary": {
+          "$type": "color",
+          "$value": "{foundation.color.accent.primary}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "interactive.primary",
+              "layer": "semantic"
+            }
+          }
+        },
+        "primaryHover": {
+          "$type": "color",
+          "$value": "{foundation.color.accent.dim}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "interactive.primaryHover",
+              "layer": "semantic"
+            }
+          }
+        }
+      },
+      "status": {
+        "success": {
+          "$type": "color",
+          "$value": "{foundation.color.status.success}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "status.success",
+              "layer": "semantic"
+            }
+          }
+        },
+        "warning": {
+          "$type": "color",
+          "$value": "{foundation.color.status.warning}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "status.warning",
+              "layer": "semantic"
+            }
+          }
+        },
+        "error": {
+          "$type": "color",
+          "$value": "{foundation.color.status.error}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "status.error",
+              "layer": "semantic"
+            }
+          }
+        },
+        "info": {
+          "$type": "color",
+          "$value": "{foundation.color.status.info}",
+          "$extensions": {
+            "costra": {
+              "publicPath": "status.info",
+              "layer": "semantic"
+            }
+          }
+        }
+      }
+    }
+  }
+}

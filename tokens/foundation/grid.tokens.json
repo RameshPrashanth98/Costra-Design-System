@@ -1,0 +1,17 @@
+{
+  "foundation": {
+    "grid": {
+      "columns": { "$type": "number", "$value": 12, "$extensions": { "costra": { "sourceCssVar": "--grid-columns", "sourceSection": "Grid" } } },
+      "gutter": { "$type": "dimension", "$value": "24px", "$extensions": { "costra": { "sourceCssVar": "--grid-gutter", "sourceSection": "Grid" } } },
+      "margin": { "$type": "dimension", "$value": "48px", "$extensions": { "costra": { "sourceCssVar": "--grid-margin", "sourceSection": "Grid" } } },
+      "max": { "$type": "dimension", "$value": "1280px", "$extensions": { "costra": { "sourceCssVar": "--grid-max", "sourceSection": "Grid" } } },
+      "breakpoint": {
+        "sm": { "$type": "dimension", "$value": "40rem", "$extensions": { "costra": { "sourceCssVar": "--bp-sm", "sourceSection": "Grid" } } },
+        "md": { "$type": "dimension", "$value": "48rem", "$extensions": { "costra": { "sourceCssVar": "--bp-md", "sourceSection": "Grid" } } },
+        "lg": { "$type": "dimension", "$value": "64rem", "$extensions": { "costra": { "sourceCssVar": "--bp-lg", "sourceSection": "Grid" } } },
+        "xl": { "$type": "dimension", "$value": "80rem", "$extensions": { "costra": { "sourceCssVar": "--bp-xl", "sourceSection": "Grid" } } },
+        "2xl": { "$type": "dimension", "$value": "96rem", "$extensions": { "costra": { "sourceCssVar": "--bp-2xl", "sourceSection": "Grid" } } }
+      }
+    }
+  }
+}

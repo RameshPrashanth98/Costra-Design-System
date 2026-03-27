@@ -1,0 +1,30 @@
+{
+  "foundation": {
+    "iconography": {
+      "canvas": { "$type": "dimension", "$value": "24px", "$extensions": { "costra": { "sourceSelector": ".icon-spec-card .is-value", "sourceSection": "Iconography", "label": "Canvas" } } },
+      "strokeWidth": { "$type": "dimension", "$value": "1.5", "$extensions": { "costra": { "sourceCssVar": "stroke-width", "sourceSection": "Iconography" } } },
+      "strokeLinecap": { "$type": "string", "$value": "round", "$extensions": { "costra": { "sourceCssVar": "stroke-linecap", "sourceSection": "Iconography" } } },
+      "strokeLinejoin": { "$type": "string", "$value": "round", "$extensions": { "costra": { "sourceCssVar": "stroke-linejoin", "sourceSection": "Iconography" } } },
+      "size": {
+        "sm": { "$type": "dimension", "$value": "16px", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceNote": "Sizes 16 · 20 · 24 · 32" } } },
+        "md": { "$type": "dimension", "$value": "20px", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceNote": "Sizes 16 · 20 · 24 · 32" } } },
+        "base": { "$type": "dimension", "$value": "24px", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceNote": "Sizes 16 · 20 · 24 · 32" } } },
+        "lg": { "$type": "dimension", "$value": "32px", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceNote": "Sizes 16 · 20 · 24 · 32" } } }
+      },
+      "inventory": {
+        "shield": { "$type": "string", "$value": "Shield", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Shield" } } },
+        "lock": { "$type": "string", "$value": "Lock", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Lock" } } },
+        "search": { "$type": "string", "$value": "Search", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Search" } } },
+        "alert": { "$type": "string", "$value": "Alert", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Alert" } } },
+        "scan": { "$type": "string", "$value": "Scan", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Scan" } } },
+        "verify": { "$type": "string", "$value": "Verify", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Verify" } } },
+        "reject": { "$type": "string", "$value": "Reject", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Reject" } } },
+        "identity": { "$type": "string", "$value": "Identity", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Identity" } } },
+        "monitor": { "$type": "string", "$value": "Monitor", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Monitor" } } },
+        "realtime": { "$type": "string", "$value": "Realtime", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Realtime" } } },
+        "verified": { "$type": "string", "$value": "Verified", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Verified" } } },
+        "activity": { "$type": "string", "$value": "Activity", "$extensions": { "costra": { "sourceSection": "Iconography", "sourceLabel": "Activity" } } }
+      }
+    }
+  }
+}

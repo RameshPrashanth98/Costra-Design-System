@@ -1,23 +1,23 @@
 import { describe, expect, test } from 'vitest';
 
-import extractionMap from '../../tokens/manifest/extraction-map.json';
+import elevationTokens from '../../tokens/foundation/elevation.tokens.json';
+import gridTokens from '../../tokens/foundation/grid.tokens.json';
+import radiusTokens from '../../tokens/foundation/radius.tokens.json';
+import spacingTokens from '../../tokens/foundation/spacing.tokens.json';
 
 describe('layout tokens', () => {
-  test('captures spacing, elevation, radius, and grid source references', () => {
-    expect(extractionMap.categories.spacing.references).toEqual(
-      expect.arrayContaining(['--space-1', '--space-6', '--space-24'])
+  test('define spacing, elevation, radius, and grid foundations', () => {
+    expect(Object.keys(spacingTokens.foundation.spacing)).toEqual(
+      expect.arrayContaining(['0', '1', '2', '3', '4', '5', '6', '8', '10', '12', '16', '20', '24'])
     );
-    expect(extractionMap.categories.elevation.references).toEqual(
-      expect.arrayContaining(['--shadow-xs', '--shadow-glow'])
-    );
-    expect(extractionMap.categories.radius.references).toEqual(
-      expect.arrayContaining(['--radius-0', '--radius-full'])
-    );
-    expect(extractionMap.categories.grid.references).toEqual(
-      expect.arrayContaining(['--grid-columns', '40rem', '48rem', '64rem', '80rem', '96rem'])
-    );
+    expect(spacingTokens.foundation.spacing['10'].$value).toBe('40px');
+    expect(elevationTokens.foundation.elevation.glow.$value).toContain('40px');
+    expect(radiusTokens.foundation.radius.full.$value).toBe('9999px');
+    expect(gridTokens.foundation.grid.columns.$value).toBe(12);
+    expect(gridTokens.foundation.grid.breakpoint.sm.$value).toBe('40rem');
+    expect(gridTokens.foundation.grid.breakpoint.md.$value).toBe('48rem');
+    expect(gridTokens.foundation.grid.breakpoint.lg.$value).toBe('64rem');
+    expect(gridTokens.foundation.grid.breakpoint.xl.$value).toBe('80rem');
+    expect(gridTokens.foundation.grid.breakpoint['2xl'].$value).toBe('96rem');
   });
-
-  test.todo('spacing tokens expose the 4px scale from 0 through 24');
-  test.todo('grid outputs include columns, gutter, margin, max width, and rem breakpoints');
 });

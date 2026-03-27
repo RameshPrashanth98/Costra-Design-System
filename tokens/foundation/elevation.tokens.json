@@ -1,0 +1,12 @@
+{
+  "foundation": {
+    "elevation": {
+      "xs": { "$type": "shadow", "$value": "0 1px 2px rgba(0,0,0,0.4)", "$extensions": { "costra": { "sourceCssVar": "--shadow-xs", "sourceSection": "Elevation" } } },
+      "sm": { "$type": "shadow", "$value": "0 2px 4px rgba(0,0,0,0.4)", "$extensions": { "costra": { "sourceCssVar": "--shadow-sm", "sourceSection": "Elevation" } } },
+      "md": { "$type": "shadow", "$value": "0 4px 12px rgba(0,0,0,0.5)", "$extensions": { "costra": { "sourceCssVar": "--shadow-md", "sourceSection": "Elevation" } } },
+      "lg": { "$type": "shadow", "$value": "0 8px 24px rgba(0,0,0,0.6)", "$extensions": { "costra": { "sourceCssVar": "--shadow-lg", "sourceSection": "Elevation" } } },
+      "xl": { "$type": "shadow", "$value": "0 16px 48px rgba(0,0,0,0.7)", "$extensions": { "costra": { "sourceCssVar": "--shadow-xl", "sourceSection": "Elevation" } } },
+      "glow": { "$type": "shadow", "$value": "0 0 40px rgba(200, 255, 0, 0.12)", "$extensions": { "costra": { "sourceCssVar": "--shadow-glow", "sourceSection": "Elevation", "sourceDependency": "--c-accent-glow" } } }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "semantic": {
+    "surface": {
+      "canvas": {
+        "$type": "color",
+        "$value": "{foundation.color.surface.canvas}",
+        "$extensions": {
+          "costra": {
+            "publicPath": "surface.canvas",
+            "layer": "semantic"
+          }
+        }
+      },
+      "panel": {
+        "$type": "color",
+        "$value": "{foundation.color.surface.panel}",
+        "$extensions": {
+          "costra": {
+            "publicPath": "surface.panel",
+            "layer": "semantic"
+          }
+        }
+      },
+      "panelElevated": {
+        "$type": "color",
+        "$value": "{foundation.color.surface.panelElevated}",
+        "$extensions": {
+          "costra": {
+            "publicPath": "surface.panelElevated",
+            "layer": "semantic"
+          }
+        }
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "color",
+        "$value": "{foundation.color.border.default}",
+        "$extensions": {
+          "costra": {
+            "publicPath": "border.default",
+            "layer": "semantic"
+          }
+        }
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{foundation.color.border.subtle}",
+        "$extensions": {
+          "costra": {
+            "publicPath": "border.subtle",
+            "layer": "semantic"
+          }
+        }
+      }
+    }
+  }
+}

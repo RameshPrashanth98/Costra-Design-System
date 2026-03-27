@@ -1,0 +1,198 @@
+{
+  "foundation": {
+    "color": {
+      "base": {
+        "black": {
+          "$type": "color",
+          "$value": "#050505",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-black",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "white": {
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-white",
+              "sourceSection": "Core Palette"
+            }
+          }
+        }
+      },
+      "surface": {
+        "canvas": {
+          "$type": "color",
+          "$value": "#0A0A0B",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-surface",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "panel": {
+          "$type": "color",
+          "$value": "#111113",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-surface-2",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "panelElevated": {
+          "$type": "color",
+          "$value": "#18181B",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-surface-3",
+              "sourceSection": "Core Palette"
+            }
+          }
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "#27272A",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-border",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "#1C1C1F",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-border-subtle",
+              "sourceSection": "Core Palette"
+            }
+          }
+        }
+      },
+      "text": {
+        "primary": {
+          "$type": "color",
+          "$value": "#FAFAFA",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-text",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "secondary": {
+          "$type": "color",
+          "$value": "#A1A1AA",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-text-secondary",
+              "sourceSection": "Core Palette"
+            }
+          }
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "#52525B",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-muted",
+              "sourceSection": "Core Palette"
+            }
+          }
+        }
+      },
+      "accent": {
+        "primary": {
+          "$type": "color",
+          "$value": "#C8FF00",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-accent",
+              "sourceSection": "Accent"
+            }
+          }
+        },
+        "dim": {
+          "$type": "color",
+          "$value": "#9FCC00",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-accent-dim",
+              "sourceSection": "Accent"
+            }
+          }
+        },
+        "glow": {
+          "$type": "color",
+          "$value": "rgba(200, 255, 0, 0.12)",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-accent-glow",
+              "sourceSection": "Accent"
+            }
+          }
+        },
+        "glowSoft": {
+          "$type": "color",
+          "$value": "rgba(200, 255, 0, 0.06)",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-accent-glow-2",
+              "sourceSection": "Accent"
+            }
+          }
+        }
+      },
+      "status": {
+        "success": {
+          "$type": "color",
+          "$value": "#22C55E",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-success",
+              "sourceSection": "Semantic"
+            }
+          }
+        },
+        "warning": {
+          "$type": "color",
+          "$value": "#F59E0B",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-warning",
+              "sourceSection": "Semantic"
+            }
+          }
+        },
+        "error": {
+          "$type": "color",
+          "$value": "#EF4444",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-error",
+              "sourceSection": "Semantic"
+            }
+          }
+        },
+        "info": {
+          "$type": "color",
+          "$value": "#3B82F6",
+          "$extensions": {
+            "costra": {
+              "sourceCssVar": "--c-info",
+              "sourceSection": "Semantic"
+            }
+          }
+        }
+      }
+    }
+  }
+}
