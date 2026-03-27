@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
+- [x] 01-01-PLAN.md - Bootstrap the token workspace and define the HTML extraction contract
 - [ ] 01-02-PLAN.md - Implement foundation tokens and minimal semantic aliases
 - [ ] 01-03-PLAN.md - Generate shared CSS, JSON, and TypeScript token outputs
 - [ ] 01-04-PLAN.md - Verify traceability and lock the stable token consumption surface
@@ -106,7 +106,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Token Foundation | 0/4 | Not started | - |
+| 1. Token Foundation | 1/4 | In Progress | - |
 | 2. Storybook Foundation | 0/3 | Not started | - |
 | 3. Structural Components | 0/2 | Not started | - |
 | 4. Showcase Components | 0/3 | Not started | - |
