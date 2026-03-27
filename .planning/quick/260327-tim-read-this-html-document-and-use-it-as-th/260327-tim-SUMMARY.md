@@ -14,6 +14,9 @@ summary_date: 2026-03-27
 - Documented icon rules and inventory from the HTML source without inventing icon components that are not yet present in the repository.
 - Verified the result with a successful `npm.cmd run build-storybook` run.
 
+## Task Commits
+1. `b6ac173` - Add the Storybook foundation docs pages, shared helpers, and token-driven data layer.
+
 ## Files
 - `src/stories/foundations/foundationData.ts` - Shared token flattening, grouping, and documentation metadata.
 - `src/stories/foundations/foundationDocs.tsx` - Shared docs page shell and presentation components.
@@ -35,4 +38,3 @@ summary_date: 2026-03-27
 ## Notes
 - Storybook still logs the existing duplicate-controls addon message because `@storybook/addon-controls` is explicitly listed alongside `@storybook/addon-essentials`.
 - Lightning CSS still warns about the generated token stylesheet using Tailwind v4's `@theme` at-rule.
-- The default Storybook config still includes an MDX glob, so Storybook reports that no `src/**/*.mdx` stories were found.
