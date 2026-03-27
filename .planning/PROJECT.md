@@ -12,11 +12,10 @@ The team can build upcoming Costra interfaces from one shared token system and a
 
 ### Validated
 
-(None yet - ship to validate)
+- [x] Extract design tokens from the source HTML into maintainable shared definitions - Validated in Phase 1: Token Foundation
 
 ### Active
 
-- [ ] Extract design tokens from the source HTML into maintainable shared definitions
 - [ ] Build an initial reusable component set from the HTML patterns
 - [ ] Document foundations and component variants in Storybook
 - [ ] Enforce WCAG 2.1 AA accessibility across the supported v1 system
@@ -33,7 +32,7 @@ The current visual source of truth is [`8.costra-design-system.html`](D:/1.Produ
 
 The HTML currently demonstrates foundations plus a first set of reusable patterns such as navigation, hero, table-of-contents links, section headers, token showcase cards, code blocks, icon cells, and footer treatments. V1 should preserve that visual language while translating it into team-usable React, TypeScript, Tailwind, and Storybook building blocks.
 
-The primary audience is the internal Costra team. The system is expected to grow in future versions, so the initial implementation needs a clean token architecture and a documentation structure that make later component additions straightforward.
+The primary audience is the internal Costra team. Phase 1 is now complete with a generated and traceable token foundation committed under `src/tokens/generated/`, which gives the upcoming Storybook and Tailwind work a stable source to consume. The system is expected to grow in future versions, so the initial implementation needs a clean token architecture and a documentation structure that make later component additions straightforward.
 
 ## Constraints
 
@@ -47,8 +46,8 @@ The primary audience is the internal Costra team. The system is expected to grow
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Storybook is the primary delivery surface for v1 | Team needs an internal reference and review surface before packaging | - Pending |
-| The HTML file is the source of truth for v1 foundations | Prevents drift while extracting tokens and first components | - Pending |
-| All components must consume shared tokens instead of hard-coded values | Makes future component expansion consistent and maintainable | - Pending |
+| The HTML file is the source of truth for v1 foundations | Prevents drift while extracting tokens and first components | Validated in Phase 1 |
+| All components must consume shared tokens instead of hard-coded values | Makes future component expansion consistent and maintainable | Token export surface established in Phase 1 |
 | WCAG 2.1 AA is a release bar for supported v1 components | Accessibility quality is part of the system contract, not a later enhancement | - Pending |
 
 ## Evolution
@@ -69,4 +68,6 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-27 after initialization*
+*Last updated: 2026-03-27 after Phase 1 completion*
+
+
