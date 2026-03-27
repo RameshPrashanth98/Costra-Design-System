@@ -1,18 +1,21 @@
 {
-  "compilerOptions": {
-    "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "noEmit": true
-  },
-  "include": [
-    "tokens",
-    "src",
-    "tests"
-  ]
+    "compilerOptions":  {
+                            "target":  "ES2022",
+                            "module":  "NodeNext",
+                            "moduleResolution":  "NodeNext",
+                            "resolveJsonModule":  true,
+                            "esModuleInterop":  true,
+                            "strict":  true,
+                            "skipLibCheck":  true,
+                            "isolatedModules":  true,
+                            "noEmit":  true,
+                            "jsx":  "react-jsx"
+                        },
+    "include":  [
+                    "tokens",
+                    "src",
+                    "tests",
+                    ".storybook",
+                    "vite.config.ts"
+                ]
 }

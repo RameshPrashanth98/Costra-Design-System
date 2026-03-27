@@ -1,16 +1,34 @@
 {
-  "name": "costra-design-system",
-  "version": "0.1.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "tokens:build": "style-dictionary build --config tokens/style-dictionary.config.ts",
-    "test": "vitest run",
-    "test:tokens": "vitest run tests/tokens"
-  },
-  "devDependencies": {
-    "style-dictionary": "5.4.0",
-    "typescript": "6.0.2",
-    "vitest": "4.1.2"
-  }
+    "name": "costra-design-system",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "tokens:build": "style-dictionary build --config tokens/style-dictionary.config.ts",
+        "test": "vitest run",
+        "test:tokens": "vitest run tests/tokens",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "devDependencies": {
+        "@storybook/addon-a11y": "^8.6.18",
+        "@storybook/addon-controls": "^8.6.18",
+        "@storybook/addon-essentials": "^8.6.14",
+        "@storybook/addon-interactions": "^8.6.14",
+        "@storybook/react-vite": "^8.6.18",
+        "@tailwindcss/vite": "^4.1.14",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "@vitejs/plugin-react": "^6.0.1",
+        "storybook": "^8.6.18",
+        "style-dictionary": "5.4.0",
+        "tailwindcss": "^4.2.2",
+        "typescript": "6.0.2",
+        "vite": "^8.0.3",
+        "vitest": "4.1.2"
+    },
+    "dependencies": {
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4"
+    }
 }
