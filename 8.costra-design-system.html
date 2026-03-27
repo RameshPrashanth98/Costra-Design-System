@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costra — Design System Foundations</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ─── CORE PALETTE ─── */
+    --c-black:        #050505;
+    --c-surface:      #0A0A0B;
+    --c-surface-2:    #111113;
+    --c-surface-3:    #18181B;
+    --c-border:       #27272A;
+    --c-border-subtle:#1C1C1F;
+    --c-muted:        #52525B;
+    --c-text-secondary:#A1A1AA;
+    --c-text:         #FAFAFA;
+    --c-white:        #FFFFFF;
+
+    /* ─── ACCENT: ELECTRIC LIME ─── */
+    --c-accent:       #C8FF00;
+    --c-accent-dim:   #9FCC00;
+    --c-accent-glow:  rgba(200, 255, 0, 0.12);
+    --c-accent-glow-2:rgba(200, 255, 0, 0.06);
+
+    /* ─── SEMANTIC ─── */
+    --c-success:      #22C55E;
+    --c-warning:      #F59E0B;
+    --c-error:        #EF4444;
+    --c-info:         #3B82F6;
+
+    /* ─── TYPOGRAPHY ─── */
+    --font-display:   'Outfit', sans-serif;
+    --font-mono:      'JetBrains Mono', 'Space Mono', monospace;
+    --font-body:      'Outfit', sans-serif;
+
+    /* ─── SPACING SCALE (4px base) ─── */
+    --space-0:  0px;
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-5:  20px;
+    --space-6:  24px;
+    --space-8:  32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+    --space-24: 96px;
+
+    /* ─── ELEVATION ─── */
+    --shadow-xs:  0 1px 2px rgba(0,0,0,0.4);
+    --shadow-sm:  0 2px 4px rgba(0,0,0,0.4);
+    --shadow-md:  0 4px 12px rgba(0,0,0,0.5);
+    --shadow-lg:  0 8px 24px rgba(0,0,0,0.6);
+    --shadow-xl:  0 16px 48px rgba(0,0,0,0.7);
+    --shadow-glow:0 0 40px var(--c-accent-glow);
+
+    /* ─── BORDER RADIUS ─── */
+    --radius-0:   0px;
+    --radius-xs:  2px;
+    --radius-sm:  4px;
+    --radius-md:  6px;
+    --radius-lg:  8px;
+    --radius-xl:  12px;
+    --radius-full:9999px;
+
+    /* ─── GRID ─── */
+    --grid-columns: 12;
+    --grid-gutter:  24px;
+    --grid-margin:  48px;
+    --grid-max:     1280px;
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESET & BASE
+  ═══════════════════════════════════════════════ */
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--c-black);
+    color: var(--c-text);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--c-accent);
+    color: var(--c-black);
+  }
+
+  /* ═══════════════════════════════════════════════
+     SCROLLBAR
+  ═══════════════════════════════════════════════ */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--c-black); }
+  ::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 3px; }
+
+  /* ═══════════════════════════════════════════════
+     ANIMATIONS
+  ═══════════════════════════════════════════════ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes lineGrow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes scanline {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+  @keyframes glitch {
+    0%   { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+    20%  { clip-path: inset(92% 0 1% 0); transform: translate(1px, -1px); }
+    40%  { clip-path: inset(43% 0 1% 0); transform: translate(-1px, 2px); }
+    60%  { clip-path: inset(25% 0 58% 0); transform: translate(2px, 1px); }
+    80%  { clip-path: inset(54% 0 7% 0); transform: translate(-2px, -1px); }
+    100% { clip-path: inset(58% 0 43% 0); transform: translate(0); }
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .anim-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  /* ═══════════════════════════════════════════════
+     LAYOUT
+  ═══════════════════════════════════════════════ */
+  .container {
+    max-width: var(--grid-max);
+    margin: 0 auto;
+    padding: 0 var(--grid-margin);
+  }
+
+  /* ═══════════════════════════════════════════════
+     NAV
+  ═══════════════════════════════════════════════ */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(5,5,5,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--c-border-subtle);
+    padding: 0 var(--grid-margin);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--c-white);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-brand .dot {
+    width: 8px; height: 8px;
+    background: var(--c-accent);
+    display: inline-block;
+  }
+  .nav-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: var(--space-6);
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-text-secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--c-accent); }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 50%, var(--c-accent-glow-2), transparent),
+      repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(200,255,0,0.015) 1px, rgba(200,255,0,0.015) 2px);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -100%; left: 0; right: 0;
+    height: 2px;
+    background: var(--c-accent);
+    opacity: 0.15;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-8);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    animation: fadeUp 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
+    opacity: 0;
+  }
+  .hero-meta::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--c-accent);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-8);
+    animation: fadeUp 0.8s 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+    opacity: 0;
+  }
+  .hero-title .accent {
+    color: var(--c-accent);
+    position: relative;
+  }
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--c-text-secondary);
+    max-width: 560px;
+    line-height: 1.7;
+    animation: fadeUp 0.8s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+    opacity: 0;
+  }
+  .hero-version {
+    position: absolute;
+    right: var(--grid-margin);
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transform-origin: right center;
+  }
+
+  /* ═══════════════════════════════════════════════
+     MARQUEE
+  ═══════════════════════════════════════════════ */
+  .marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--c-border-subtle);
+    border-bottom: 1px solid var(--c-border-subtle);
+    padding: var(--space-4) 0;
+    background: var(--c-surface);
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+  .marquee-track span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 0 var(--space-8);
+  }
+  .marquee-track span .sep {
+    color: var(--c-accent);
+    margin: 0 var(--space-6);
+  }
+
+  /* ═══════════════════════════════════════════════
+     SECTION
+  ═══════════════════════════════════════════════ */
+  .section {
+    padding: var(--space-24) 0;
+    border-bottom: 1px solid var(--c-border-subtle);
+    position: relative;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+  }
+  .section-number {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-accent);
+    letter-spacing: 0.15em;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .section-desc {
+    font-size: 0.95rem;
+    color: var(--c-text-secondary);
+    max-width: 640px;
+    margin-bottom: var(--space-12);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ═══════════════════════════════════════════════
+     TOKEN TABLE
+  ═══════════════════════════════════════════════ */
+  .token-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  .token-label::before {
+    content: '//';
+    color: var(--c-accent-dim);
+  }
+
+  /* ═══════════════════════════════════════════════
+     COLOR SYSTEM
+  ═══════════════════════════════════════════════ */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+  .color-card {
+    border: 1px solid var(--c-border-subtle);
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .color-card:hover {
+    border-color: var(--c-border);
+    transform: translateY(-2px);
+  }
+  .color-swatch {
+    height: 100px;
+    position: relative;
+  }
+  .color-swatch::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: var(--c-border-subtle);
+  }
+  .color-info {
+    padding: var(--space-4);
+    background: var(--c-surface);
+  }
+  .color-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: var(--space-1);
+  }
+  .color-hex {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-text-secondary);
+  }
+  .color-token {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-muted);
+    margin-top: var(--space-2);
+  }
+
+  /* ═══════════════════════════════════════════════
+     TYPOGRAPHY SHOWCASE
+  ═══════════════════════════════════════════════ */
+  .type-showcase {
+    margin-bottom: var(--space-12);
+  }
+  .type-row {
+    padding: var(--space-8) 0;
+    border-bottom: 1px solid var(--c-border-subtle);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: baseline;
+    gap: var(--space-8);
+  }
+  .type-meta {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-muted);
+    line-height: 1.8;
+  }
+  .type-meta strong {
+    color: var(--c-text-secondary);
+    font-weight: 500;
+  }
+  .type-sample-d1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 4.5rem;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .type-sample-d2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .type-sample-h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+  .type-sample-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .type-sample-h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+  .type-sample-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--c-text-secondary);
+  }
+  .type-sample-caption {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--c-muted);
+    letter-spacing: 0.05em;
+  }
+  .type-sample-code {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--c-accent);
+    background: var(--c-surface-2);
+    padding: var(--space-2) var(--space-4);
+    display: inline-block;
+  }
+
+  /* ─── Font Families Block ─── */
+  .font-families {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+  .font-family-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-subtle);
+    padding: var(--space-8);
+    position: relative;
+    overflow: hidden;
+  }
+  .font-family-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--c-accent);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    transform-origin: left;
+  }
+  .font-family-card:hover::before { transform: scaleX(1); }
+  .font-family-card .ff-role {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+  .font-family-card .ff-name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+  .font-family-card .ff-name.display { font-family: var(--font-display); }
+  .font-family-card .ff-name.mono { font-family: var(--font-mono); }
+  .font-family-card .ff-specimen {
+    font-size: 0.85rem;
+    color: var(--c-text-secondary);
+    margin-bottom: var(--space-6);
+    line-height: 1.6;
+  }
+  .font-family-card .ff-weights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .ff-weight-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: var(--space-1) var(--space-3);
+    background: var(--c-surface-2);
+    border: 1px solid var(--c-border-subtle);
+    color: var(--c-text-secondary);
+    letter-spacing: 0.05em;
+  }
+
+  /* ═══════════════════════════════════════════════
+     SPACING
+  ═══════════════════════════════════════════════ */
+  .spacing-scale {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .spacing-row {
+    display: grid;
+    grid-template-columns: 80px 80px 1fr;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) 0;
+  }
+  .spacing-token {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-text-secondary);
+  }
+  .spacing-value {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--c-muted);
+  }
+  .spacing-bar {
+    height: 28px;
+    background: linear-gradient(90deg, var(--c-accent), var(--c-accent-dim));
+    opacity: 0.7;
+    position: relative;
+    transition: opacity 0.3s;
+  }
+  .spacing-bar:hover { opacity: 1; }
+
+  /* ═══════════════════════════════════════════════
+     ELEVATION
+  ═══════════════════════════════════════════════ */
+  .elevation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-6);
+  }
+  .elevation-card {
+    background: var(--c-surface-2);
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    border: 1px solid var(--c-border-subtle);
+    transition: transform 0.3s;
+  }
+  .elevation-card:hover { transform: translateY(-4px); }
+  .elevation-card .el-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-text-secondary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .elevation-card .el-value {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--c-muted);
+    text-align: center;
+    padding: 0 var(--space-4);
+  }
+
+  /* ═══════════════════════════════════════════════
+     GRID SYSTEM
+  ═══════════════════════════════════════════════ */
+  .grid-demo {
+    margin-bottom: var(--space-8);
+  }
+  .grid-columns {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+    margin-bottom: var(--space-8);
+  }
+  .grid-col {
+    height: 60px;
+    background: var(--c-accent-glow);
+    border: 1px solid rgba(200,255,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-accent-dim);
+    transition: background 0.3s;
+  }
+  .grid-col:hover {
+    background: var(--c-accent-glow);
+    border-color: var(--c-accent);
+  }
+  .grid-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  .grid-spec {
+    padding: var(--space-6);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-subtle);
+  }
+  .grid-spec .gs-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+  .grid-spec .gs-value {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  .grid-spec .gs-desc {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-muted);
+    margin-top: var(--space-1);
+  }
+
+  /* ═══════════════════════════════════════════════
+     ICONOGRAPHY
+  ═══════════════════════════════════════════════ */
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--space-3);
+  }
+  .icon-cell {
+    aspect-ratio: 1;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-subtle);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    transition: border-color 0.3s, background 0.3s;
+    cursor: default;
+  }
+  .icon-cell:hover {
+    border-color: var(--c-accent);
+    background: var(--c-surface-2);
+  }
+  .icon-cell svg {
+    width: 24px; height: 24px;
+    stroke: var(--c-text-secondary);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s;
+  }
+  .icon-cell:hover svg { stroke: var(--c-accent); }
+  .icon-cell .icon-name {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    color: var(--c-muted);
+    letter-spacing: 0.05em;
+  }
+  .icon-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+  }
+  .icon-spec-card {
+    padding: var(--space-6);
+    border: 1px solid var(--c-border-subtle);
+    background: var(--c-surface);
+  }
+  .icon-spec-card .is-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+  }
+  .icon-spec-card .is-value {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .icon-spec-card .is-desc {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-muted);
+    margin-top: var(--space-1);
+  }
+
+  /* ═══════════════════════════════════════════════
+     BORDER RADIUS
+  ═══════════════════════════════════════════════ */
+  .radius-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-4);
+  }
+  .radius-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-subtle);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .radius-sample {
+    width: 72px; height: 72px;
+    background: var(--c-accent-glow);
+    border: 2px solid var(--c-accent);
+    transition: background 0.3s;
+  }
+  .radius-card:hover .radius-sample {
+    background: rgba(200,255,0,0.2);
+  }
+  .radius-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--c-text-secondary);
+    text-align: center;
+  }
+  .radius-value {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--c-muted);
+  }
+
+  /* ═══════════════════════════════════════════════
+     CODE BLOCK
+  ═══════════════════════════════════════════════ */
+  .code-block {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border-subtle);
+    padding: var(--space-6);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.8;
+    overflow-x: auto;
+    margin-top: var(--space-8);
+    position: relative;
+  }
+  .code-block::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-4);
+    font-size: 0.55rem;
+    color: var(--c-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .code-block .key { color: var(--c-accent); }
+  .code-block .val { color: var(--c-text-secondary); }
+  .code-block .comment { color: var(--c-muted); }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════════ */
+  .footer {
+    padding: var(--space-16) 0;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-4);
+  }
+  .footer-brand .accent { color: var(--c-accent); }
+  .footer-meta {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ═══════════════════════════════════════════════
+     TOC
+  ═══════════════════════════════════════════════ */
+  .toc {
+    padding: var(--space-16) 0;
+    border-bottom: 1px solid var(--c-border-subtle);
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--c-border-subtle);
+  }
+  .toc-item {
+    background: var(--c-surface);
+    padding: var(--space-6) var(--space-8);
+    text-decoration: none;
+    color: var(--c-text);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    transition: background 0.3s;
+  }
+  .toc-item:hover {
+    background: var(--c-surface-2);
+  }
+  .toc-item .toc-num {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--c-accent);
+    letter-spacing: 0.1em;
+    min-width: 30px;
+  }
+  .toc-item .toc-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .toc-item .toc-arrow {
+    margin-left: auto;
+    color: var(--c-muted);
+    font-size: 0.8rem;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .toc-item:hover .toc-arrow {
+    transform: translateX(4px);
+    color: var(--c-accent);
+  }
+
+  /* ═══════════════════════════════════════════════
+     RESPONSIVE
+  ═══════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    :root {
+      --grid-margin: 24px;
+    }
+    .nav-links { display: none; }
+    .type-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .grid-specs { grid-template-columns: 1fr; }
+    .hero-version { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="dot"></span>
+    Costra
+  </div>
+  <div class="nav-tag">Design System v1.0</div>
+  <ul class="nav-links">
+    <li><a href="#color">Color</a></li>
+    <li><a href="#typography">Type</a></li>
+    <li><a href="#spacing">Spacing</a></li>
+    <li><a href="#elevation">Elevation</a></li>
+    <li><a href="#grid">Grid</a></li>
+    <li><a href="#icons">Icons</a></li>
+    <li><a href="#radius">Radius</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-meta">Foundations / Design Tokens / Styles</div>
+    <h1 class="hero-title">
+      <span class="accent">Costra</span><br>
+      Design<br>
+      System
+    </h1>
+    <p class="hero-sub">
+      A brutalist, precision-engineered design system built for Costra's AI-powered digital defense platform. Every token, every scale, every decision — intentional.
+    </p>
+  </div>
+  <div class="hero-version">Foundations — March 2026</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════════ -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Color <span class="sep">◆</span> Typography <span class="sep">◆</span> Spacing <span class="sep">◆</span> Elevation <span class="sep">◆</span> Grid <span class="sep">◆</span> Iconography <span class="sep">◆</span> Border Radius <span class="sep">◆</span> Design Tokens <span class="sep">◆</span> Foundations <span class="sep">◆</span> Styles</span>
+    <span>Color <span class="sep">◆</span> Typography <span class="sep">◆</span> Spacing <span class="sep">◆</span> Elevation <span class="sep">◆</span> Grid <span class="sep">◆</span> Iconography <span class="sep">◆</span> Border Radius <span class="sep">◆</span> Design Tokens <span class="sep">◆</span> Foundations <span class="sep">◆</span> Styles</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     TABLE OF CONTENTS
+═══════════════════════════════════════════════ -->
+<section class="toc">
+  <div class="container">
+    <div class="toc-grid">
+      <a href="#color" class="toc-item"><span class="toc-num">01</span><span class="toc-name">Color</span><span class="toc-arrow">→</span></a>
+      <a href="#typography" class="toc-item"><span class="toc-num">02</span><span class="toc-name">Typography</span><span class="toc-arrow">→</span></a>
+      <a href="#spacing" class="toc-item"><span class="toc-num">03</span><span class="toc-name">Spacing</span><span class="toc-arrow">→</span></a>
+      <a href="#elevation" class="toc-item"><span class="toc-num">04</span><span class="toc-name">Elevation</span><span class="toc-arrow">→</span></a>
+      <a href="#grid" class="toc-item"><span class="toc-num">05</span><span class="toc-name">Grid</span><span class="toc-arrow">→</span></a>
+      <a href="#icons" class="toc-item"><span class="toc-num">06</span><span class="toc-name">Iconography</span><span class="toc-arrow">→</span></a>
+      <a href="#radius" class="toc-item"><span class="toc-num">07</span><span class="toc-name">Border Radius</span><span class="toc-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     01 — COLOR
+═══════════════════════════════════════════════ -->
+<section class="section" id="color">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Color</h2>
+    </div>
+    <p class="section-desc">
+      Costra's palette is rooted in high-contrast brutalism — deep blacks establish authority while electric lime cuts through as the unmistakable accent of trust and verification. Derived from the brand's duality concept: dark for threats, light for truth.
+    </p>
+
+    <!-- Primary Palette -->
+    <div class="token-label">Primary Palette</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#050505;"></div>
+        <div class="color-info">
+          <div class="color-name">Black</div>
+          <div class="color-hex">#050505</div>
+          <div class="color-token">--c-black</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0A0A0B;"></div>
+        <div class="color-info">
+          <div class="color-name">Surface</div>
+          <div class="color-hex">#0A0A0B</div>
+          <div class="color-token">--c-surface</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#111113;"></div>
+        <div class="color-info">
+          <div class="color-name">Surface 2</div>
+          <div class="color-hex">#111113</div>
+          <div class="color-token">--c-surface-2</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#18181B;"></div>
+        <div class="color-info">
+          <div class="color-name">Surface 3</div>
+          <div class="color-hex">#18181B</div>
+          <div class="color-token">--c-surface-3</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#27272A;"></div>
+        <div class="color-info">
+          <div class="color-name">Border</div>
+          <div class="color-hex">#27272A</div>
+          <div class="color-token">--c-border</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FAFAFA;"></div>
+        <div class="color-info">
+          <div class="color-name">Text</div>
+          <div class="color-hex">#FAFAFA</div>
+          <div class="color-token">--c-text</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accent -->
+    <div class="token-label">Accent — Electric Lime</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C8FF00;"></div>
+        <div class="color-info">
+          <div class="color-name">Accent</div>
+          <div class="color-hex">#C8FF00</div>
+          <div class="color-token">--c-accent</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#9FCC00;"></div>
+        <div class="color-info">
+          <div class="color-name">Accent Dim</div>
+          <div class="color-hex">#9FCC00</div>
+          <div class="color-token">--c-accent-dim</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:rgba(200,255,0,0.12); border: 1px dashed rgba(200,255,0,0.3);"></div>
+        <div class="color-info">
+          <div class="color-name">Accent Glow</div>
+          <div class="color-hex">rgba(200,255,0,0.12)</div>
+          <div class="color-token">--c-accent-glow</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neutrals -->
+    <div class="token-label">Neutrals</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#52525B;"></div>
+        <div class="color-info">
+          <div class="color-name">Muted</div>
+          <div class="color-hex">#52525B</div>
+          <div class="color-token">--c-muted</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#A1A1AA;"></div>
+        <div class="color-info">
+          <div class="color-name">Text Secondary</div>
+          <div class="color-hex">#A1A1AA</div>
+          <div class="color-token">--c-text-secondary</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFFFFF;"></div>
+        <div class="color-info">
+          <div class="color-name">White</div>
+          <div class="color-hex">#FFFFFF</div>
+          <div class="color-token">--c-white</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Semantic -->
+    <div class="token-label">Semantic Colors</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#22C55E;"></div>
+        <div class="color-info">
+          <div class="color-name">Success</div>
+          <div class="color-hex">#22C55E</div>
+          <div class="color-token">--c-success</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F59E0B;"></div>
+        <div class="color-info">
+          <div class="color-name">Warning</div>
+          <div class="color-hex">#F59E0B</div>
+          <div class="color-token">--c-warning</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#EF4444;"></div>
+        <div class="color-info">
+          <div class="color-name">Error</div>
+          <div class="color-hex">#EF4444</div>
+          <div class="color-token">--c-error</div>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#3B82F6;"></div>
+        <div class="color-info">
+          <div class="color-name">Info</div>
+          <div class="color-hex">#3B82F6</div>
+          <div class="color-token">--c-info</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     02 — TYPOGRAPHY
+═══════════════════════════════════════════════ -->
+<section class="section" id="typography">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Typography</h2>
+    </div>
+    <p class="section-desc">
+      Costra pairs Outfit — a geometric sans with confident proportions — with JetBrains Mono for technical precision. All-caps display text reinforces the brutalist authority of the brand.
+    </p>
+
+    <!-- Font Families -->
+    <div class="token-label">Font Families</div>
+    <div class="font-families">
+      <div class="font-family-card">
+        <div class="ff-role">Display + Body</div>
+        <div class="ff-name display">Outfit</div>
+        <div class="ff-specimen" style="font-family:'Outfit',sans-serif;">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+          abcdefghijklmnopqrstuvwxyz<br>
+          0123456789 — !@#$%&
+        </div>
+        <div class="ff-weights">
+          <span class="ff-weight-tag">300 Light</span>
+          <span class="ff-weight-tag">400 Regular</span>
+          <span class="ff-weight-tag">500 Medium</span>
+          <span class="ff-weight-tag">600 Semi</span>
+          <span class="ff-weight-tag">700 Bold</span>
+          <span class="ff-weight-tag">800 Extra</span>
+          <span class="ff-weight-tag">900 Black</span>
+        </div>
+      </div>
+      <div class="font-family-card">
+        <div class="ff-role">Monospace / Code / Labels</div>
+        <div class="ff-name mono" style="font-family:'JetBrains Mono',monospace;">JetBrains Mono</div>
+        <div class="ff-specimen" style="font-family:'JetBrains Mono',monospace;">
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+          abcdefghijklmnopqrstuvwxyz<br>
+          0123456789 → ≠ === {}[]
+        </div>
+        <div class="ff-weights">
+          <span class="ff-weight-tag">400 Regular</span>
+          <span class="ff-weight-tag">500 Medium</span>
+          <span class="ff-weight-tag">600 Semi</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Type Scale -->
+    <div class="token-label">Type Scale</div>
+    <div class="type-showcase">
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Display 1</strong><br>
+          72 / 1.0 / -0.03em<br>
+          Weight 900 · CAPS
+        </div>
+        <div class="type-sample-d1">Costra</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Display 2</strong><br>
+          48 / 1.05 / -0.02em<br>
+          Weight 800 · CAPS
+        </div>
+        <div class="type-sample-d2">Digital Shield</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 1</strong><br>
+          36 / 1.15 / -0.015em<br>
+          Weight 700
+        </div>
+        <div class="type-sample-h1">Neutralize Threats</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 2</strong><br>
+          24 / 1.3<br>
+          Weight 600
+        </div>
+        <div class="type-sample-h2">Real-time Cross-identification</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Heading 3</strong><br>
+          18 / 1.4<br>
+          Weight 600
+        </div>
+        <div class="type-sample-h3">Proactive defense layer</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Body</strong><br>
+          16 / 1.6<br>
+          Weight 400
+        </div>
+        <div class="type-sample-body">Costra uses proprietary AI and real-time cross-identification processes to neutralize digital threats before they take place, specializing in advanced deepfake detection.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Caption</strong><br>
+          12 / 1.5 / 0.05em<br>
+          Mono · Weight 400
+        </div>
+        <div class="type-sample-caption">SYSTEM STATUS: OPERATIONAL — ALL THREATS NEUTRALIZED</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Code</strong><br>
+          14 / 1.5<br>
+          Mono · Weight 500
+        </div>
+        <div class="type-sample-code">costra.verify(identity, { mode: 'realtime' })</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     03 — SPACING
+═══════════════════════════════════════════════ -->
+<section class="section" id="spacing">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Spacing</h2>
+    </div>
+    <p class="section-desc">
+      A 4px base unit creates a rigid, systematic spacing scale. Brutalist design demands precision — every pixel of whitespace is intentional. The scale follows a linear+jump pattern for maximum control.
+    </p>
+
+    <div class="token-label">Spacing Scale — Base 4px</div>
+    <div class="spacing-scale">
+      <div class="spacing-row"><span class="spacing-token">space-1</span><span class="spacing-value">4px</span><div class="spacing-bar" style="width:4px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-2</span><span class="spacing-value">8px</span><div class="spacing-bar" style="width:8px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-3</span><span class="spacing-value">12px</span><div class="spacing-bar" style="width:12px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-4</span><span class="spacing-value">16px</span><div class="spacing-bar" style="width:16px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-5</span><span class="spacing-value">20px</span><div class="spacing-bar" style="width:20px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-6</span><span class="spacing-value">24px</span><div class="spacing-bar" style="width:24px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-8</span><span class="spacing-value">32px</span><div class="spacing-bar" style="width:32px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-10</span><span class="spacing-value">40px</span><div class="spacing-bar" style="width:40px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-12</span><span class="spacing-value">48px</span><div class="spacing-bar" style="width:48px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-16</span><span class="spacing-value">64px</span><div class="spacing-bar" style="width:64px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-20</span><span class="spacing-value">80px</span><div class="spacing-bar" style="width:80px;"></div></div>
+      <div class="spacing-row"><span class="spacing-token">space-24</span><span class="spacing-value">96px</span><div class="spacing-bar" style="width:96px;"></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     04 — ELEVATION
+═══════════════════════════════════════════════ -->
+<section class="section" id="elevation">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Elevation</h2>
+    </div>
+    <p class="section-desc">
+      Costra uses minimal elevation. In a dark-first brutalist system, depth is communicated through surface color shifts and border definition rather than heavy drop shadows. Shadows remain sharp and utilitarian.
+    </p>
+
+    <div class="token-label">Elevation Scale</div>
+    <div class="elevation-grid">
+      <div class="elevation-card" style="box-shadow: var(--shadow-xs);">
+        <div class="el-label">XS</div>
+        <div class="el-value">0 1px 2px rgba(0,0,0,0.4)</div>
+      </div>
+      <div class="elevation-card" style="box-shadow: var(--shadow-sm);">
+        <div class="el-label">SM</div>
+        <div class="el-value">0 2px 4px rgba(0,0,0,0.4)</div>
+      </div>
+      <div class="elevation-card" style="box-shadow: var(--shadow-md);">
+        <div class="el-label">MD</div>
+        <div class="el-value">0 4px 12px rgba(0,0,0,0.5)</div>
+      </div>
+      <div class="elevation-card" style="box-shadow: var(--shadow-lg);">
+        <div class="el-label">LG</div>
+        <div class="el-value">0 8px 24px rgba(0,0,0,0.6)</div>
+      </div>
+      <div class="elevation-card" style="box-shadow: var(--shadow-xl);">
+        <div class="el-label">XL</div>
+        <div class="el-value">0 16px 48px rgba(0,0,0,0.7)</div>
+      </div>
+      <div class="elevation-card" style="box-shadow: var(--shadow-glow); border-color: rgba(200,255,0,0.15);">
+        <div class="el-label" style="color:var(--c-accent);">Glow</div>
+        <div class="el-value">0 0 40px accent-glow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     05 — GRID
+═══════════════════════════════════════════════ -->
+<section class="section" id="grid">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">Grid</h2>
+    </div>
+    <p class="section-desc">
+      A 12-column grid with 24px gutters provides flexible, disciplined layout composition. Maximum content width of 1280px maintains readability while allowing dense data layouts for Costra's dashboard interfaces.
+    </p>
+
+    <div class="token-label">12-Column Grid</div>
+    <div class="grid-demo">
+      <div class="grid-columns">
+        <div class="grid-col">1</div>
+        <div class="grid-col">2</div>
+        <div class="grid-col">3</div>
+        <div class="grid-col">4</div>
+        <div class="grid-col">5</div>
+        <div class="grid-col">6</div>
+        <div class="grid-col">7</div>
+        <div class="grid-col">8</div>
+        <div class="grid-col">9</div>
+        <div class="grid-col">10</div>
+        <div class="grid-col">11</div>
+        <div class="grid-col">12</div>
+      </div>
+    </div>
+
+    <div class="grid-specs">
+      <div class="grid-spec">
+        <div class="gs-label">Columns</div>
+        <div class="gs-value">12</div>
+        <div class="gs-desc">Standard responsive grid</div>
+      </div>
+      <div class="grid-spec">
+        <div class="gs-label">Gutter</div>
+        <div class="gs-value">24px</div>
+        <div class="gs-desc">Column gap</div>
+      </div>
+      <div class="grid-spec">
+        <div class="gs-label">Max Width</div>
+        <div class="gs-value">1280px</div>
+        <div class="gs-desc">Content container</div>
+      </div>
+    </div>
+
+    <div class="code-block" data-lang="CSS">
+      <span class="comment">/* Grid Breakpoints */</span><br>
+      <span class="key">--bp-sm</span>:  <span class="val">640px</span>;   <span class="comment">/* Mobile landscape */</span><br>
+      <span class="key">--bp-md</span>:  <span class="val">768px</span>;   <span class="comment">/* Tablet */</span><br>
+      <span class="key">--bp-lg</span>:  <span class="val">1024px</span>;  <span class="comment">/* Desktop */</span><br>
+      <span class="key">--bp-xl</span>:  <span class="val">1280px</span>;  <span class="comment">/* Wide desktop */</span><br>
+      <span class="key">--bp-2xl</span>: <span class="val">1536px</span>;  <span class="comment">/* Ultra-wide */</span><br><br>
+      <span class="comment">/* Column behavior */</span><br>
+      <span class="key">sm</span>:  <span class="val">4 columns</span>  · <span class="val">16px gutter</span> · <span class="val">24px margin</span><br>
+      <span class="key">md</span>:  <span class="val">8 columns</span>  · <span class="val">20px gutter</span> · <span class="val">32px margin</span><br>
+      <span class="key">lg+</span>: <span class="val">12 columns</span> · <span class="val">24px gutter</span> · <span class="val">48px margin</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     06 — ICONOGRAPHY
+═══════════════════════════════════════════════ -->
+<section class="section" id="icons">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2 class="section-title">Iconography</h2>
+    </div>
+    <p class="section-desc">
+      Costra icons follow a strict 24×24 grid with 1.5px strokes. Geometric, minimal, and sharp — no rounded friendliness. Every icon communicates function with zero ambiguity, matching the brand's utilitarian brutalist ethos.
+    </p>
+
+    <div class="token-label">Icon Set — Core</div>
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="icon-name">Shield</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="0"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <span class="icon-name">Lock</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span class="icon-name">Search</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span class="icon-name">Alert</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span class="icon-name">Scan</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        <span class="icon-name">Verify</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <span class="icon-name">Reject</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="icon-name">Identity</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="0"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <span class="icon-name">Monitor</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span class="icon-name">Realtime</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span class="icon-name">Verified</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span class="icon-name">Activity</span>
+      </div>
+    </div>
+
+    <div class="icon-specs">
+      <div class="icon-spec-card">
+        <div class="is-label">Canvas</div>
+        <div class="is-value">24 × 24px</div>
+        <div class="is-desc">Standard icon canvas</div>
+      </div>
+      <div class="icon-spec-card">
+        <div class="is-label">Stroke</div>
+        <div class="is-value">1.5px</div>
+        <div class="is-desc">Consistent weight across set</div>
+      </div>
+      <div class="icon-spec-card">
+        <div class="is-label">Cap / Join</div>
+        <div class="is-value">Round / Round</div>
+        <div class="is-desc">Stroke line cap and join style</div>
+      </div>
+      <div class="icon-spec-card">
+        <div class="is-label">Sizes</div>
+        <div class="is-value">16 · 20 · 24 · 32</div>
+        <div class="is-desc">Available size variants</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     07 — BORDER RADIUS
+═══════════════════════════════════════════════ -->
+<section class="section" id="radius">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <h2 class="section-title">Border Radius</h2>
+    </div>
+    <p class="section-desc">
+      Brutalism favors sharp, angular forms. Costra defaults to 0px radius for primary UI elements — rectangles communicate precision and authority. Radius is introduced sparingly: pills for tags, subtle rounding for interactive touch targets.
+    </p>
+
+    <div class="token-label">Radius Scale</div>
+    <div class="radius-grid">
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:0px;"></div>
+        <div class="radius-label">None</div>
+        <div class="radius-value">0px — Default</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:2px;"></div>
+        <div class="radius-label">XS</div>
+        <div class="radius-value">2px</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:4px;"></div>
+        <div class="radius-label">SM</div>
+        <div class="radius-value">4px</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:6px;"></div>
+        <div class="radius-label">MD</div>
+        <div class="radius-value">6px</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:8px;"></div>
+        <div class="radius-label">LG</div>
+        <div class="radius-value">8px</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:12px;"></div>
+        <div class="radius-label">XL</div>
+        <div class="radius-value">12px</div>
+      </div>
+      <div class="radius-card">
+        <div class="radius-sample" style="border-radius:9999px;"></div>
+        <div class="radius-label">Full</div>
+        <div class="radius-value">9999px — Pill</div>
+      </div>
+    </div>
+
+    <!-- Usage Guidelines -->
+    <div class="code-block" data-lang="USAGE">
+      <span class="comment">/* Border Radius Usage Guidelines */</span><br><br>
+      <span class="key">Buttons</span>:     <span class="val">0px</span>  <span class="comment">/* Primary & secondary actions */</span><br>
+      <span class="key">Cards</span>:       <span class="val">0px</span>  <span class="comment">/* Content containers, modals */</span><br>
+      <span class="key">Inputs</span>:      <span class="val">0px</span>  <span class="comment">/* Form fields, text inputs */</span><br>
+      <span class="key">Tags/Badges</span>: <span class="val">2px</span>  <span class="comment">/* Status indicators, labels */</span><br>
+      <span class="key">Tooltips</span>:    <span class="val">4px</span>  <span class="comment">/* Hover overlays */</span><br>
+      <span class="key">Avatars</span>:     <span class="val">9999px</span> <span class="comment">/* Profile images — full circle */</span><br>
+      <span class="key">Chips</span>:       <span class="val">9999px</span> <span class="comment">/* Filter pills, selectable tags */</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     DESIGN TOKENS EXPORT
+═══════════════════════════════════════════════ -->
+<section class="section" id="tokens">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-number">⬡</span>
+      <h2 class="section-title">Design Tokens</h2>
+    </div>
+    <p class="section-desc">
+      All Costra design tokens exported as CSS custom properties. Copy this block into your project root to bootstrap the entire system.
+    </p>
+
+    <div class="code-block" data-lang="CSS TOKENS">
+<span class="comment">/* ═══ COSTRA DESIGN TOKENS v1.0 ═══ */</span>
+<span class="key">:root</span> {
+  <span class="comment">/* Color — Primary */</span>
+  <span class="key">--c-black</span>:         <span class="val">#050505</span>;
+  <span class="key">--c-surface</span>:       <span class="val">#0A0A0B</span>;
+  <span class="key">--c-surface-2</span>:     <span class="val">#111113</span>;
+  <span class="key">--c-surface-3</span>:     <span class="val">#18181B</span>;
+  <span class="key">--c-border</span>:        <span class="val">#27272A</span>;
+  <span class="key">--c-muted</span>:         <span class="val">#52525B</span>;
+  <span class="key">--c-text-secondary</span>:<span class="val">#A1A1AA</span>;
+  <span class="key">--c-text</span>:          <span class="val">#FAFAFA</span>;
+  <span class="key">--c-white</span>:         <span class="val">#FFFFFF</span>;
+
+  <span class="comment">/* Color — Accent */</span>
+  <span class="key">--c-accent</span>:        <span class="val">#C8FF00</span>;
+  <span class="key">--c-accent-dim</span>:    <span class="val">#9FCC00</span>;
+
+  <span class="comment">/* Color — Semantic */</span>
+  <span class="key">--c-success</span>:       <span class="val">#22C55E</span>;
+  <span class="key">--c-warning</span>:       <span class="val">#F59E0B</span>;
+  <span class="key">--c-error</span>:         <span class="val">#EF4444</span>;
+  <span class="key">--c-info</span>:          <span class="val">#3B82F6</span>;
+
+  <span class="comment">/* Typography */</span>
+  <span class="key">--font-display</span>:    <span class="val">'Outfit', sans-serif</span>;
+  <span class="key">--font-body</span>:       <span class="val">'Outfit', sans-serif</span>;
+  <span class="key">--font-mono</span>:       <span class="val">'JetBrains Mono', monospace</span>;
+
+  <span class="comment">/* Spacing (4px base) */</span>
+  <span class="key">--space-1</span>: <span class="val">4px</span>;   <span class="key">--space-2</span>: <span class="val">8px</span>;
+  <span class="key">--space-3</span>: <span class="val">12px</span>;  <span class="key">--space-4</span>: <span class="val">16px</span>;
+  <span class="key">--space-6</span>: <span class="val">24px</span>;  <span class="key">--space-8</span>: <span class="val">32px</span>;
+  <span class="key">--space-12</span>:<span class="val">48px</span>;  <span class="key">--space-16</span>:<span class="val">64px</span>;
+  <span class="key">--space-20</span>:<span class="val">80px</span>;  <span class="key">--space-24</span>:<span class="val">96px</span>;
+
+  <span class="comment">/* Border Radius */</span>
+  <span class="key">--radius-0</span>:  <span class="val">0px</span>;
+  <span class="key">--radius-xs</span>: <span class="val">2px</span>;
+  <span class="key">--radius-sm</span>: <span class="val">4px</span>;
+  <span class="key">--radius-md</span>: <span class="val">6px</span>;
+  <span class="key">--radius-lg</span>: <span class="val">8px</span>;
+  <span class="key">--radius-xl</span>: <span class="val">12px</span>;
+  <span class="key">--radius-full</span>:<span class="val">9999px</span>;
+}
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">C<span class="accent">O</span>STRA</div>
+    <div class="footer-meta">Design System Foundations — v1.0 — March 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
